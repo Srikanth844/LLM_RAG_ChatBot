@@ -1,8 +1,8 @@
 # Build an LLM RAG Chatbot With LangChain
 
-This repo contains the source code for an LLM RAG Chatbot built with LangChain, originally created for the Real Python article [Build an LLM RAG Chatbot With LangChain](https://realpython.com/build-llm-rag-chatbot-with-langchain/#demo-a-llm-rag-chatbot-with-langchain-and-neo4j). The goal of this project is to iteratively develop a chatbot that leverages the latest techniques, libraries, and models in RAG and Generative AI. Ideally, this repo gives developers a template to build chatbots for their own data and use-cases.
+This repo contains the source code for an LLM RAG Chatbot built with LangChain, originally created for the Real Python article Build an LLM RAG Chatbot With LangChain. The goal of this project is to iteratively develop a chatbot that leverages the latest techniques, libraries, and models in RAG and Generative AI. Ideally, this repo gives developers a template to build chatbots for their own data and use-cases.
 
- Currently, the chatbot performs RAG over a synthetic [hospital system dataset](https://realpython.com/build-llm-rag-chatbot-with-langchain/#explore-the-available-data) and supports the following features:
+ Currently, the chatbot performs RAG over a synthetic hospital system dataset and supports the following features:
 
 - **Tool calling**: The chatbot agent has access to multiple tools including LangChain chains for RAG and fake API calls.
 
@@ -27,13 +27,13 @@ NEO4J_PASSWORD=<YOUR_NEO4J_PASSWORD>
 
 OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 
-HOSPITALS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/hospitals.csv
-PAYERS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/payers.csv
-PHYSICIANS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/physicians.csv
-PATIENTS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/patients.csv
-VISITS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/visits.csv
-REVIEWS_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/reviews.csv
-EXAMPLE_CYPHER_CSV_PATH=https://raw.githubusercontent.com/hfhoffman1144/langchain_neo4j_rag_app/main/data/example_cypher.csv
+HOSPITALS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/hospitals.csv
+PAYERS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/payers.csv
+PHYSICIANS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/physicians.csv
+PATIENTS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/patients.csv
+VISITS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/visits.csv
+REVIEWS_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/reviews.csv
+EXAMPLE_CYPHER_CSV_PATH=https://raw.githubusercontent.com/Srikanth844/LLM_RAG_ChatBot/main/data/example_cypher.csv
 
 CHATBOT_URL=http://host.docker.internal:8000/hospital-rag-agent
 
@@ -49,7 +49,7 @@ NEO4J_CYPHER_EXAMPLES_METADATA_NAME=cypher
 
 The three `NEO4J_` variables are used to connect to your Neo4j AuraDB instance. Follow the directions [here](https://neo4j.com/cloud/platform/aura-graph-database/?ref=docs-nav-get-started) to create a free instance.
 
-The chatbot currently uses OpenAI LLMs, so you'll need to create an [OpenAI API key](https://realpython.com/generate-images-with-dalle-openai-api/#get-your-openai-api-key) and store it as `OPENAI_API_KEY`.
+The chatbot currently uses OpenAI LLMs, so you'll need to create an OpenAI API key
 
 Once you have a running Neo4j instance, and have filled out all the environment variables in `.env`, you can run the entire project with [Docker Compose](https://docs.docker.com/compose/). You can install Docker Compose by following [these directions](https://docs.docker.com/compose/install/).
 
@@ -62,13 +62,6 @@ $ docker-compose up --build
 After each container finishes building, you'll be able to access the chatbot api at `http://localhost:8000/docs`, the Streamlit app at `http://localhost:8501/`, and the Cypher Example Self-Service Portal at `http://localhost:8502/`
 
 ![Demo](./langchain_rag_chatbot_demo.gif)
-
-## Supporting Articles
-
-You can read the following articles for more detailed information on this project:
-
-- [Build an LLM RAG Chatbot With LangChain](https://realpython.com/build-llm-rag-chatbot-with-langchain/#demo-a-llm-rag-chatbot-with-langchain-and-neo4j)
-- [A Simple Strategy to Improve LLM Query Generation](https://towardsdatascience.com/a-simple-strategy-to-improve-llm-query-generation-3178a7426c6f)
 
 ## Future Additions
 
